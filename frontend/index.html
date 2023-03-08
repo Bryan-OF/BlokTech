@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Together - Home</title>
+  
+  <link rel="stylesheet" href="css/game-together.css">
+</head>
+
+<body>
+  <header class="flex-center fixed-header">
+    <li><a href="index.html"><img class="logo" src="images/icons/logo.png" alt="Logo"/></a></li>
+    <div>
+      <li><a href="#"><img class="profile_logo" src="images/icons/search.png" alt="Search"/></a></li>
+      <li><a href="#"><img class="profile_logo" src="images/icons/settings.png" alt="Settings"/></a></li>
+    </div>
+  </header>
+
+  <main>
+    <section class="group-bg">
+      <div class="group">
+        <div class="game-platform">
+          <img src="/images/bo1-canvas.png" alt="">
+          <img src="/images/icons/steam.png" alt="">
+        </div>
+        <div class="user-name">
+          <img src="images/icons/user-pic.png" alt="">
+          <h2>Sienna Lara has created a group</h2>
+        </div>
+        <div class="info">
+          <div class="info-chat"> 
+            <img src="images/icons/chat.png" alt="">
+            <h3>2</h3>
+          </div class="Join">
+          <button>join</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="fav-games">
+      <h2>Popular games</h2>
+
+      <div class="features">
+        <figure>
+          <img src="images/game-icons/game-icon-1.png" alt="">
+          <figcaption></figcaption>
+        </figure>
+        <figure>
+          <img src="images/game-icons/game-icon-2.png" alt="">
+          <figcaption></figcaption>
+        </figure>
+        <figure>
+          <img src="images/game-icons/game-icon-3.png" alt="">
+          <figcaption></figcaption>
+        </figure>
+        <figure>
+          <img src="images/game-icons/game-icon-4.png" alt="">
+          <figcaption></figcaption>
+        </figure>
+        <figure>
+          <img src="images/game-icons/game-icon-5.png" alt="">
+          <figcaption></figcaption>
+        </figure>
+        <figure>
+          <img src="images/game-icons/game-icon-6.png" alt="">
+          <figcaption></figcaption>
+        </figure>
+        <figure>
+          <img src="images/game-icons/game-icon-7.png" alt="">
+          <figcaption></figcaption>
+        </figure>
+        <figure>
+          <img src="images/game-icons/game-icon-8.png" alt="">
+          <figcaption></figcaption>
+        </figure>
+        <figure>
+          <img src="images/game-icons/game-icon-9.png" alt="">
+          <figcaption></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    </section>
+  </main>
+
+  <footer class="fixed-footer">
+    <nav>
+      <ul class="flex-center">
+        <li><a href="index.html"><img class="icon" src="images/icons/home-selected.png" alt="Home"/></a></li>
+        <li><a href="#"><img class="icon" src="images/icons/notivications.png" alt="Notifications"/></a></li>
+        <li><a href="#"><img class="icon" src="images/icons/chat.png" alt="Friends"/></a></li>
+        <li><a href="profile.html"><img class="icon" src="images/icons/profile.png" alt="Profile"/></a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html>
+<script>
+//https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+fetch('http://localhost:8080/profil').then(function(response) {
+  return response.json();
+}).then(function(data) {
+  console.log(data);
+}).catch(function(err) {
+  console.log('Fetch Error :-S', err);
+});
+</script>
+

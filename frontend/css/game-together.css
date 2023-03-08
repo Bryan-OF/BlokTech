@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  max-width: 420px !important;
+  margin: 0 auto !important;
+  left: 0 !important;
+  right: 0 !important;
+
+  font-family: "FilsonPro", sans-serif;
+}
+
+main {
+  flex-grow: 1;
+  margin-top: 74px;
+}
+
+
+
+/* ********************** */
+/* ******* header ******* */
+/* ********************** */
+
+header {
+  background: #15202C;
+  text-align: center;
+}
+
+header li {
+  display: inline-block;
+  flex-basis: auto;
+  padding: 0.55em;
+}
+
+
+
+/* ********************** */
+/* ******** Home ******** */
+/* ********************** */
+
+.group-bg {
+  color: white;
+
+  padding: 0.5em 1.5em 1em;
+}
+
+.group {
+  position: relative;
+  background-color: #15202C;
+  border-radius: 5%;
+  padding: 1em;
+}
+
+
+
+.user-name {
+  position: absolute;
+  display: flex;
+  align-items: center;
+
+  gap: 0.5em;
+
+  top: 5%;
+}
+
+.user-name img {
+  border-radius: 15%;
+  width: 3em;
+}
+
+.user-name h2 {
+  font-size: 1em;
+}
+
+
+
+.game-platform {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.game-platform img:nth-of-type(1) {
+  position: relative;
+
+  width: 100%;
+
+  top: 0;
+  left: 0;
+}
+
+.game-platform img:nth-of-type(2) {
+  position: absolute;
+
+  top: 73%;
+  left: 85%;
+
+  background-color: white;
+  border-radius: 50%;
+}
+
+.info, .info-chat {
+  display: flex;
+  align-items: center;
+}
+
+.info {
+  justify-content: space-between;
+  padding: 0.2em 0;
+}
+
+.info img {
+  width: 2em;
+}
+
+.info-chat {
+  gap: 0.5em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+button {
+  font-size: 1.5em;
+  font-weight: bold;
+
+  padding: 0.25em 0.75em;
+  border-radius: 12.5px;
+}
+
+
+
+.populair-games {
+  background-color: blueviolet;
+}
+
+/* ********************** */
+/* ******* Profile ********/
+/* ********************** */
+
+.profile {
+  padding-top: 1em;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 600;
+  padding: .5em 0;
+  text-align: center
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 2em;
+}
+
+.user a:nth-of-type(even) img {
+  width: 8em;
+}
+
+.user a:nth-of-type(odd) img {
+  width: 3em;
+}
+
+.platform a img {
+  width: 3em;
+}
+
+
+
+img {
+  max-width: 100%;
+  max-height: 70vh;
+}
+
+.white-box_1 {
+  background-color: white;
+  padding: 1em;
+}
+
+.white-box_2 {
+  background-color: white;
+  padding: 1.6em;
+}
+
+
+
+/* ********************** */
+/* Profile favorite games */
+/* ********************** */
+
+.fav-games {
+  background-color: lightgrey;
+}
+
+.fav-games h2 {
+  padding: 1em 0 0 1.2em;
+}
+
+.features {
+  padding: 1em 0;
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em; 
+}
+
+.features figure {
+  text-align: center;
+  width: 7em;
+}
+
+.features figure img {
+  border-radius: 9%;
+  box-shadow: black 0 0 1em;
+  max-height: 70vh;
+  max-width: 100%;
+
+  width: 6.5em;
+}
+
+figcaption {
+  font-size: 1.3em;
+  color: black;
+  padding: 0.5em 1em 1em 1em;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* ********************** */
+/* ******** Footer ********/
+/* ********************** */
+
+nav li {
+  display: inline-block;
+  flex-basis: auto;
+  padding: 0.6em;
+}
+
+footer nav {
+  background: #15202C;
+  border-radius: 15px;
+  margin: 0 5px;
+}
+
+.fixed-footer {
+  max-width: 420px !important;
+  margin: 0 auto !important;
+  left: 0 !important;
+  right: 0 !important;
+
+  position: fixed;
+  bottom: 5px;
+  width: 100%;
+}
+
+.fixed-header {
+  max-width: 420px !important;
+  margin: 0 auto !important;
+  left: 0 !important;
+  right: 0 !important;
+
+  position: fixed;
+  width: 100%;
+}
