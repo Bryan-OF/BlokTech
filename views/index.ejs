@@ -1,44 +1,81 @@
-<HTML>
-  <head>
-    <title>Homepage</title>
-  </head>
-  <body>
-    <% if (username) { %>
-    <h2><%= username %></h2>
-    <% } else { %>
-    <h2>No username stored on the server</h2>
-    <% } %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Together - Home</title>
+  
+  <link rel="stylesheet" href="./styles/style.css">
+  <script>
+    function like(gameId, userId)
+      {
+      var xmlhttp=new XMLHttpRequest();
+      xmlhttp.open("GET","/like/" + gameId + '/' + userId ,true);
+      xmlhttp.send();
+      } 
+  </script>
+</head>
 
-    <!-- TODO: Get help from teacher -->
+<body>
+  <header class="flex-center fixed-header">
+    <ul>
+      <li><a href="#"><img class="logo" src="./images/icons/logo.png" alt="Logo"/></a></li>
+      <div>
+        <li><a href="#"><img class="profile_logo" src="./images/icons/search.png" alt="Search"/></a></li>
+        <li><a href="#"><img class="profile_logo" src="./images/icons/settings.png" alt="Settings"/></a></li>
+      </div>
+    </ul>
+  </header>
 
-    <form action="/update-username" method="post" enctype="multipart/form-data">
-      <label for="name">Name</label>
-      <input type="text" name="name" />
-      <input type="submit" value="send" />
-    </form>
-    <form action="/delete-username" method="get" enctype="multipart/form-data">
-      <input type="submit" value="delete" />
-    </form>
+  <main>
+    <section class="group-bg">
+      <div class="group">
+        <div class="game-platform">
+          <img src="./images/bo1-canvas.png" alt="">
+          <img src="./images/icons/steam.png" alt="">
+        </div>
+        <div class="user-name">
+          <img src="./images/icons/user-pic.png" alt="">
+          <h2>Sienna Lara has created a group</h2>
+        </div>
+        <div class="info">
+          <div class="info-chat"> 
+            <img src="./images/icons/chat.png" alt="">
+            <h3>2</h3>
+          </div class="Join">
+          <button>join</button>
+        </div>
+      </div>
+    </section>
 
-    <!-- Here you can add those JS variables, because the page will render everything and find them when he loads the included file-->
-    <script>
-      const links = [
-        {
-          href: "/",
-          icon: "<svg>...</svg>",
-          text: "Home",
-        },
-        {
-          href: "collection",
-          icon: "<svg>...</svg>",
-          text: "Collection",
-        },
-        {
-          href: "live",
-          icon: "<svg>...</svg>",
-          text: "Live",
-        },
-      ];
-    </script>
-  </body>
-</HTML>
+    <section class="fav-games">
+      <h2>Popular games</h2>
+
+      <div class="features">
+        <% if (games) { %>
+          <% games.forEach((game) => { %>
+            <figure>
+              <button onclick="like(<%= game.id %>, <%= userId %>)"><3</button>
+              <img src="/images/game-icons/game-icon-<%= game.id %>.png" alt="" />
+              <figcaption></figcaption>
+            </figure>
+          <% }); }%>
+      </div>
+    </section>
+
+    </section>
+  </main>
+
+  <footer class="fixed-footer flex-center">
+    <nav>
+      <ul>
+        <li><a href="#"><img class="icon" src="./images/icons/home-selected.png" alt="Home"/></a></li>
+        <li><a href="#"><img class="icon" src="./images/icons/notivications.png" alt="Notifications"/></a></li>
+        <li><a href="#"><img class="icon" src="./images/icons/chat.png" alt="Friends"/></a></li>
+        <li><a href="/profile/<%= userId %>"><img class="icon" src="./images/icons/profile.png" alt="Profile"/></a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Together - Profile</title>
+
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+
+  <body>
+    <header class="flex-center fixed-header">
+      <ul>
+        <li>
+          <a href="/index"
+            ><img class="logo" src="/images/icons/logo.png" alt="Logo"
+          /></a>
+        </li>
+        <div>
+          <li>
+            <a href="#"
+              ><img
+                class="profile_logo"
+                src="/images/icons/search.png"
+                alt="Search"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img
+                class="profile_logo"
+                src="/images/icons/settings.png"
+                alt="Settings"
+            /></a>
+          </li>
+        </div>
+      </ul>
+    </header>
+
+    <main>
+      <section class="profile">
+        <div class="content user">
+          <a href="#"
+            ><img
+              src="/images/icons/settings-profile.png"
+              alt="settings profile"
+          /></a>
+          <a href="#"
+            ><img src="/images/icons/profile-pic.png" alt="Profile pic"
+          /></a>
+          <a href="#"
+            ><img src="/images/icons/add-friends.png" alt="Add friends"
+          /></a>
+        </div>
+
+        <h1>User: <%= userId %></h1>
+
+        <div class="content platform">
+          <a href="#"><img src="/images/icons/steam.png" alt="Steam" /></a>
+          <a href="#"
+            ><img src="/images/icons/blizzard.png" alt="blizzard"
+          /></a>
+          <a href="#"><img src="/images/icons/sony.png" alt="" /></a>
+        </div>
+      </section>
+
+      <div class="white-box_1"></div>
+
+      <section class="fav-games">
+        <h2>Favorite Games</h2>
+
+        <div class="features">
+          <% if (likes.length) { %>
+            <% likes.forEach((like) => { %>
+              <figure>
+                <img src="/images/game-icons/game-icon-<%= like.gameId %>.png" alt="" />
+                <figcaption></figcaption>
+              </figure>
+            <% }); %> <% } else { %>
+            <p>User with ID <%= userId %> did not like any games yet.</p>
+            <% } %>
+        </div>
+      </section>
+      <div class="white-box_2"></div>
+    </main>
+
+    <footer class="fixed-footer flex-center">
+      <nav>
+        <ul>
+          <li>
+            <a href="/home"
+              ><img class="icon" src="/images/icons/home.png" alt="Home"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img
+                class="icon"
+                src="/images/icons/notivications.png"
+                alt="Notifications"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img class="icon" src="/images/icons/chat.png" alt="Friends"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img
+                class="icon"
+                src="/images/icons/profile-selected.png"
+                alt="Profile"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

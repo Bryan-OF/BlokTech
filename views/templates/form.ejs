@@ -1,0 +1,44 @@
+<HTML>
+    <head>
+      <title>Homepage</title>
+    </head>
+    <body>
+      <% if (username) { %>
+      <h2><%= username %></h2>
+      <% } else { %>
+      <h2>No username stored on the server</h2>
+      <% } %>
+  
+      <!-- TODO: Get help from teacher -->
+  
+      <form action="/update-username" method="post" enctype="multipart/form-data">
+        <label for="name">Name</label>
+        <input type="text" name="name" />
+        <input type="submit" value="send" />
+      </form>
+      <form action="/delete-username" method="get" enctype="multipart/form-data">
+        <input type="submit" value="delete" />
+      </form>
+  
+      <!-- Here you can add those JS variables, because the page will render everything and find them when he loads the included file-->
+      <script>
+        const links = [
+          {
+            href: "/",
+            icon: "<svg>...</svg>",
+            text: "Home",
+          },
+          {
+            href: "collection",
+            icon: "<svg>...</svg>",
+            text: "Collection",
+          },
+          {
+            href: "live",
+            icon: "<svg>...</svg>",
+            text: "Live",
+          },
+        ];
+      </script>
+    </body>
+  </HTML>
