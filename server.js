@@ -48,14 +48,13 @@ games  = [
 const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri);
 
-// Define a route to get all the likes
+// Endpoint to get all the likes
 app.get('/likes', async (req, res) => {
   try {
     await client.connect();
     // database and collection code goes here
     const db = client.db("gameTogether-db");
     db.collection("likes").find().toArray((err, likes) => {
-      console.log(likes);
       if (err) throw err;
       res.json(likes);
       client.close();
@@ -91,7 +90,7 @@ app.get('/like/:gameId/:userId', async (req, res) => {
       db.close();
     });
 
-    res.status(200).send('succes');
+    res.status(201).send('succes');
   } catch (err) {
     console.error(err);
     res.status(500).send('Server Error');
@@ -117,7 +116,6 @@ async function getUserLikesById(id) {
 }
 
 app.use(cors());
-
 app.use(express.static('static'));
 
 app.set("view engine", "ejs");
@@ -132,7 +130,6 @@ app.get("/home", async(req, res) => {
 
 app.post('/update-username', upload.none(), function (req, res, next) {
   username = req.body.name;
-  console.log(username);
   res.redirect("/")
 });
 

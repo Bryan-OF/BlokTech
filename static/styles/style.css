@@ -30,6 +30,7 @@ main {
 header {
   background: #15202C;
   text-align: center;
+  z-index: 100;
 }
 
 header li {
@@ -257,8 +258,6 @@ footer nav {
   background: #15202C;
   border-radius: 15px;
   margin: 0 5px;
-
-  
 }
 
 .fixed-footer {

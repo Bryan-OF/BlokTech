@@ -10,6 +10,7 @@
   <script>
     function like(gameId, userId)
       {
+        // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
       var xmlhttp=new XMLHttpRequest();
       xmlhttp.open("GET","/like/" + gameId + '/' + userId ,true);
       xmlhttp.send();
@@ -56,7 +57,7 @@
         <% if (games) { %>
           <% games.forEach((game) => { %>
             <figure>
-              <button onclick="like(<%= game.id %>, <%= userId %>)"><3</button>
+              <button onclick="like(<%= game.id %>, <%= userId %>)">Add</button>
               <img src="/images/game-icons/game-icon-<%= game.id %>.png" alt="" />
               <figcaption></figcaption>
             </figure>
