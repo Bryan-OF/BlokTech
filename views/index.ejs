@@ -45,7 +45,7 @@
             <img src="./images/icons/chat.png" alt="">
             <h3>2</h3>
           </div class="Join">
-          <button>join</button>
+          <button class="join-button ">join</button>
         </div>
       </div>
     </section>
@@ -57,7 +57,7 @@
         <% if (games) { %>
           <% games.forEach((game) => { %>
             <figure>
-              <button onclick="like(<%= game.id %>, <%= userId %>)">Add</button>
+              <button class="add-button" onclick="like(<%= game.id %>, <%= userId %>)">Add</button>
               <img src="/images/game-icons/game-icon-<%= game.id %>.png" alt="" />
               <figcaption></figcaption>
             </figure>

@@ -13,26 +13,14 @@
     <header class="flex-center fixed-header">
       <ul>
         <li>
-          <a href="/index"
-            ><img class="logo" src="/images/icons/logo.png" alt="Logo"
-          /></a>
+          <a href="/home"><img class="logo" src="/images/icons/logo.png" alt="Logo"/></a>
         </li>
         <div>
           <li>
-            <a href="#"
-              ><img
-                class="profile_logo"
-                src="/images/icons/search.png"
-                alt="Search"
-            /></a>
+            <a href="#"><img class="profile_logo" src="/images/icons/search.png" alt="Search"/></a>
           </li>
           <li>
-            <a href="#"
-              ><img
-                class="profile_logo"
-                src="/images/icons/settings.png"
-                alt="Settings"
-            /></a>
+            <a href="#"><img class="profile_logo" src="/images/icons/settings.png" alt="Settings"/></a>
           </li>
         </div>
       </ul>
@@ -54,7 +42,7 @@
           /></a>
         </div>
 
-        <h1>User: <%= userId %></h1>
+        <h1 class="h1-profile">User: <%= userId %></h1>
 
         <div class="content platform">
           <a href="#"><img src="/images/icons/steam.png" alt="Steam" /></a>
@@ -71,15 +59,18 @@
         <h2>Favorite Games</h2>
 
         <div class="features">
-          <% if (likes.length) { %>
-            <% likes.forEach((like) => { %>
-              <figure>
-                <img src="/images/game-icons/game-icon-<%= like.gameId %>.png" alt="" />
-                <figcaption></figcaption>
-              </figure>
-            <% }); %> <% } else { %>
-            <p>User with ID <%= userId %> did not like any games yet.</p>
-            <% } %>
+          <% if (likes.length) { %> <% likes.forEach((like) => { %>
+          <figure>
+            <img
+              src="/images/game-icons/game-icon-<%= like.gameId %>.png"
+              alt=""
+            />
+            <button class="remove-button">X</button>
+            <figcaption></figcaption>
+          </figure>
+          <% }); %> <% } else { %>
+          <p>User with ID <%= userId %> did not like any games yet.</p>
+          <% } %>
         </div>
       </section>
       <div class="white-box_2"></div>
