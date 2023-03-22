@@ -4,6 +4,7 @@ const express = require("express");
 // https://expressjs.com/en/resources/middleware/cors.html
 const cors = require("cors");
 const multer  = require('multer');
+var ObjectId = require('mongodb').ObjectId;
 
 require('dotenv').config();
 
@@ -71,6 +72,25 @@ app.get('/likes', async (req, res) => {
   }
 });
 
+// Endpoint to get all the likes
+app.get('/unlike/:likeId/:userId', async (req, res) => {
+  const likeId = req.params.likeId;
+  const userId = req.params.userId;
+
+  try {
+    await client.connect();
+    // database and collection code goes here
+    const db = client.db("gameTogether-db");
+    db.collection("likes").deleteOne( { "_id" : new ObjectId(likeId) } );
+
+    res.status(200).send('Succes');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+});
+
+// Route parameter: :gameId, :userId
 app.get('/like/:gameId/:userId', async (req, res) => {
   const gameId = req.params.gameId;
   const userId = req.params.userId;
@@ -140,5 +160,9 @@ app.get('/delete-username', upload.none(), function (req, res, next) {
 });
 
 app.get("/username", (req, res) => res.json({ name: username }));
+
+app.all('*', (req, res) => {
+  res.render("error");
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

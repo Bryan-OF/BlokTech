@@ -55,7 +55,7 @@
 
       <div class="features">
         <% if (games) { %>
-          <% games.forEach((game) => { %>
+          <% games.forEach((game) => { %> 
             <figure>
               <button class="add-button" onclick="like(<%= game.id %>, <%= userId %>)">Add</button>
               <img src="/images/game-icons/game-icon-<%= game.id %>.png" alt="" />
@@ -64,7 +64,7 @@
           <% }); }%>
       </div>
     </section>
-
+    
     </section>
   </main>
 

@@ -7,6 +7,17 @@
     <title>Game Together - Profile</title>
 
     <link rel="stylesheet" href="/styles/style.css" />
+    <script>
+    function unlike(likeId, userId)
+      {
+        // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+        var xmlhttp=new XMLHttpRequest();
+        xmlhttp.open("GET","/unlike/" + likeId + '/' + userId,true);
+        xmlhttp.send();
+
+        setTimeout(function(){ location.reload(); }, 1250);
+      } 
+    </script>
   </head>
 
   <body>
@@ -65,7 +76,7 @@
               src="/images/game-icons/game-icon-<%= like.gameId %>.png"
               alt=""
             />
-            <button class="remove-button">X</button>
+            <button onclick="unlike('<%= like._id %>', '<%= like.userId %>')" class="remove-button">X</button>
             <figcaption></figcaption>
           </figure>
           <% }); %> <% } else { %>
