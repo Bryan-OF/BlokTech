@@ -7,17 +7,8 @@
     <title>Game Together - Profile</title>
 
     <link rel="stylesheet" href="/styles/style.css" />
-    <script>
-    function unlike(likeId, userId)
-      {
-        // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
-        var xmlhttp=new XMLHttpRequest();
-        xmlhttp.open("GET","/unlike/" + likeId + '/' + userId,true);
-        xmlhttp.send();
 
-        setTimeout(function(){ location.reload(); }, 1250);
-      } 
-    </script>
+    <script src="/script/script.js"></script>
   </head>
 
   <body>
@@ -57,9 +48,7 @@
 
         <div class="content platform">
           <a href="#"><img src="/images/icons/steam.png" alt="Steam" /></a>
-          <a href="#"
-            ><img src="/images/icons/blizzard.png" alt="blizzard"
-          /></a>
+          <a href="#"><img src="/images/icons/blizzard.png" alt="blizzard"/></a>
           <a href="#"><img src="/images/icons/sony.png" alt="" /></a>
         </div>
       </section>
@@ -76,7 +65,7 @@
               src="/images/game-icons/game-icon-<%= like.gameId %>.png"
               alt=""
             />
-            <button onclick="unlike('<%= like._id %>', '<%= like.userId %>')" class="remove-button">X</button>
+            <button class="remove-button" onclick="unlike('<%= like._id %>', '<%= like.userId %>')">X</button>
             <figcaption></figcaption>
           </figure>
           <% }); %> <% } else { %>

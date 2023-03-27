@@ -7,15 +7,8 @@
   <title>Game Together - Home</title>
   
   <link rel="stylesheet" href="./styles/style.css">
-  <script>
-    function like(gameId, userId)
-      {
-        // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
-      var xmlhttp=new XMLHttpRequest();
-      xmlhttp.open("GET","/like/" + gameId + '/' + userId ,true);
-      xmlhttp.send();
-      } 
-  </script>
+
+  <script src="/script/script.js"></script>
 </head>
 
 <body>
@@ -78,5 +71,6 @@
       </ul>
     </nav>
   </footer>
+  
 </body>
 </html>
