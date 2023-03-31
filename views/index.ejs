@@ -43,22 +43,21 @@
       </div>
     </section>
 
-    <section class="fav-games">
-      <h2>Popular games</h2>
+    <section>
+      <h2 class="h2-mainpage">Popular games</h2>
 
       <div class="features">
-        <% if (games) { %>
-          <% games.forEach((game) => { %> 
-            <figure>
-              <button class="add-button" onclick="like(<%= game.id %>, <%= userId %>)">Add</button>
-              <img src="/images/game-icons/game-icon-<%= game.id %>.png" alt="" />
-              <figcaption></figcaption>
-            </figure>
-          <% }); }%>
+        <% if (games) { %> <!-- Controleer of er games zijn om weer te geven -->
+        <% games.forEach((game) => { %> <!-- Ga door elk spel in de games-array -->
+          <figure>
+            <img src="/images/game-icons/game-icon-<%= game.id %>.png" alt="" />
+            <figcaption></figcaption>
+            <button type="button" class="add-button" data-game-id="<%= game.id %>" data-user-id="<%= userId %>">Add</button>
+          </figure>
+        <% }); }%>
       </div>
     </section>
-    
-    </section>
+
   </main>
 
   <footer class="fixed-footer flex-center">
@@ -71,6 +70,5 @@
       </ul>
     </nav>
   </footer>
-  
 </body>
 </html>
