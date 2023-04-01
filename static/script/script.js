@@ -1,28 +1,26 @@
+// This function is executed when the DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
-  // Find all 'add-button' elements and attach a click event listener
-  const addButtons = document.querySelectorAll(".add-button");
-  addButtons.forEach((button) => {
-    button.addEventListener("click", function (event) {
+  // Find all 'game-form' elements and attach a submit event listener
+  const gameForms = document.querySelectorAll(".game-form");
+  gameForms.forEach((form) => {
+    form.addEventListener("submit", function (event) {
       event.preventDefault();
-      const gameId = event.target.dataset.gameId;
-      const userId = event.target.dataset.userId;
-      like(gameId, userId);
-    });
-  });
-
-  // Find all 'remove-button' elements and attach a click event listener
-  const removeButtons = document.querySelectorAll(".remove-button");
-  removeButtons.forEach((button) => {
-    button.addEventListener("click", function (event) {
-      event.preventDefault();
-      const likeId = event.target.dataset.likeId;
-      const userId = event.target.dataset.userId;
-      unlike(likeId, userId);
+      const button = event.target.querySelector("button");
+      const gameId = button.dataset.gameId;
+      const userId = button.dataset.userId;
+      if (button.classList.contains("add-button")) {
+        like(gameId, userId);
+      } else if (button.classList.contains("remove-button")) {
+        const likeId = button.dataset.likeId;
+        unlike(likeId, userId);
+      }
     });
   });
 });
 
+// Adds a liked to a game to profile
 function like(gameId, userId) {
+  // Send a POST-request to the server with the game-id and the user-id
   fetch(`/like`, {
     method: "POST",
     headers: {
@@ -42,6 +40,7 @@ function like(gameId, userId) {
     });
 }
 
+// Removes a liked from profile
 function unlike(likeId, userId) {
   fetch(`/unlike`, {
     method: "POST",
@@ -62,7 +61,9 @@ function unlike(likeId, userId) {
     });
 }
 
-// // Like functie
+
+
+// //  oude Like functie
 // function like(gameId, userId) {
 //     // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
 //     var xmlhttp=new XMLHttpRequest();
@@ -71,7 +72,7 @@ function unlike(likeId, userId) {
 //     // Code om een spel toe te voegen aan de favorieten van de gebruiker
 // }
 
-// // Unlike functie
+// // oude Unlike functie
 // function unlike(likeId, userId) {
 //     // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
 //     var xmlhttp=new XMLHttpRequest();

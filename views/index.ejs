@@ -49,11 +49,13 @@
       <div class="features">
         <% if (games) { %> <!-- Controleer of er games zijn om weer te geven -->
         <% games.forEach((game) => { %> <!-- Ga door elk spel in de games-array -->
-          <figure>
-            <img src="/images/game-icons/game-icon-<%= game.id %>.png" alt="" />
-            <figcaption></figcaption>
-            <button type="button" class="add-button" data-game-id="<%= game.id %>" data-user-id="<%= userId %>">Add</button>
-          </figure>
+          <form class="game-form"> <!-- a from that likes to the js funtion -->
+            <figure>
+              <img src="/images/game-icons/game-icon-<%= game.id %>.png" alt="" />
+              <figcaption></figcaption>
+              <button type="submit" class="add-button" data-game-id="<%= game.id %>" data-user-id="<%= userId %>">Add</button>
+            </figure>
+          </form>          
         <% }); }%>
       </div>
     </section>

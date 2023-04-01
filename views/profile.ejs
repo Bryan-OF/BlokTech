@@ -75,11 +75,13 @@
         <div class="features">
           <% if (likes.length) { %> <!-- Controleer of de gebruiker likes heeft -->
             <% likes.forEach((like) => { %> <!-- Ga door elk 'like'-object in de likes-array -->
+            <form class="game-form"> <!-- a from that likes to the js funtion -->
               <figure>
                 <img src="/images/game-icons/game-icon-<%= like.gameId %>.png" alt="" />
                 <figcaption></figcaption>
-                <button type="button" class="remove-button" data-like-id="<%= like._id %>" data-user-id="<%= like.userId %>">X</button>
+                <button type="submit" class="remove-button" data-like-id="<%= like._id %>" data-user-id="<%= like.userId %>">X</button>
               </figure>
+            </form>            
             <% }); %>
           <!-- Als de gebruiker geen likes heeft -->
           <% } else { %>
