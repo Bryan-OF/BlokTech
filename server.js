@@ -158,12 +158,15 @@ app.post("/like", async (req, res) => {
       .collection("likes")
       .find({ userId: Number(userId) })
       .toArray();
+      // checks if the game is already liked
     if ((await allLikes).some((like) => like.gameId === Number(gameId))) {
       throw "already liked";
     }
 
+    // add like to database
     db.collection("likes").insertOne(
       { gameId: Number(gameId), userId: Number(userId) },
+      // if error happens
       function (err, res) {
         if (err) throw err;
         db.close();
@@ -177,7 +180,7 @@ app.post("/like", async (req, res) => {
   }
 });
 
-// Feature to retrieve likes from a user based on their I
+// Feature to retrieve likes from a user based on their Id
 async function getUserLikesById(id) {
   try {
     await client.connect();
@@ -185,10 +188,11 @@ async function getUserLikesById(id) {
     const db = client.db("gameTogether-db");
     const likesCollection = db.collection("likes");
 
-    // find code goes here
+    // makes user array into number
     const allLikes = likesCollection.find({ userId: Number(id) }).toArray();
 
     console.log(await allLikes);
+    // sends funtion back
     return await allLikes;
   } finally {
     // Ensures that the client will close when you finish/error
@@ -207,25 +211,28 @@ app.get("/profile/:userId", async (req, res) => {
 });
 
 // Home route for multible users
+// render page for each user without login
 app.get("/home", async (req, res) => {
-  res.render("index", { userId: 1, games: games });
+  res.render("index", { userId: 2, games: games });
 });
 
+
+// routes not used in project
 // Route to update the username
-app.post("/update-username", upload.none(), function (req, res, next) {
-  username = req.body.name;
-  res.redirect("/");
-});
+// app.post("/update-username", upload.none(), function (req, res, next) {
+//   username = req.body.name;
+//   res.redirect("/");
+// });
 
 // Route to remove the username
 // we use get here because HTML5 does not allow delete methodes to be used in a form.
-app.get("/delete-username", upload.none(), function (req, res, next) {
-  username = null;
-  res.redirect("/");
-});
+// app.get("/delete-username", upload.none(), function (req, res, next) {
+//   username = null;
+//   res.redirect("/");
+// });
 
 // Route to retrieve the current username
-app.get("/username", (req, res) => res.json({ name: username }));
+// app.get("/username", (req, res) => res.json({ name: username }));
 
 // Route for handling invalid routes.
 app.all("*", (req, res) => {

@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       const button = event.target.querySelector("button");
+      // dataset verwijst naar atribut in ejs buttons
       const gameId = button.dataset.gameId;
       const userId = button.dataset.userId;
       if (button.classList.contains("add-button")) {
@@ -26,6 +27,7 @@ function like(gameId, userId) {
     headers: {
       "Content-Type": "application/json",
     },
+    // Json formats body
     body: JSON.stringify({ gameId, userId }),
   })
     .then((response) => {
@@ -47,6 +49,7 @@ function unlike(likeId, userId) {
     headers: {
       "Content-Type": "application/json",
     },
+    // Json formats body
     body: JSON.stringify({ likeId, userId }),
   })
     .then((response) => {
