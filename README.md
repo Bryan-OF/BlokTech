@@ -1,8 +1,10 @@
-# BlokTech - Game Together
+# 🎮 BlokTech - Game Together
 
 Welkom op mijn BlokTech Project: Game Together, de webapplicatie die gamers helpt samen te spelen. Met Game Together kun je een groep aanmaken om samen een bepaald spel te spelen of iemand aan je team toevoegen als je spelers nodig hebt.
 
-## Inhoudsopgave
+![Game-together-banner](https://user-images.githubusercontent.com/112858653/231905232-3df31b34-cdc1-4076-8dda-5f2a96380530.png)
+
+## 📃 Inhoudsopgave
 
 - [Functie](#functie)
 - [Installatie](#installatie)
@@ -12,25 +14,25 @@ Welkom op mijn BlokTech Project: Game Together, de webapplicatie die gamers help
 - [Bijdragen](#bijdragen)
 - [Licentie](#licentie)
 
-## Functie
+## 🕹️ Functie
 
 De functie die ik koos om voor mijn project te ontwikkelen, de functie is Liking. Hiermee kunnen gebruikers hun eigen lijst met favoriete games maken, zodat anderen kunnen zien welke games ze spelen en op welk platform. Dit maakt het nog makkelijker om gelijkgestemde gamers te vinden om samen te spelen.
 
-## Installatie
+## 💻 Installatie
 
 1. Clone de repository
 2. Installeer de benodigde dependencies met `npm install`
 3. Maak een `.env` bestand aan en voeg je MongoDB URI toe
 4. Start het project met `npm start`
 
-## Gebruik
+## 🔧 Gebruik
 
 De webapplicatie bevat de volgende pagina's:
 
 - Homepagina: Toont een lijst met games.
 - Profielpagina: Toont de favoriete games van een gebruiker.
 
-## API Endpoints
+## 🔨 API Endpoints
 
 - `POST /like`: Voeg een game toe aan de favorieten van een gebruiker.
 - `POST /unlike`: Verwijder een game uit de favorieten van een gebruiker.
@@ -40,7 +42,7 @@ De webapplicatie bevat de volgende pagina's:
 - `GET /delete-username`: Verwijder de gebruikersnaam.
 - `GET /username`: Haal de huidige gebruikersnaam op.
 
-## Technologieën
+## 👨‍💻 Technologieën
 
 - Node.js
 - Express
@@ -49,7 +51,7 @@ De webapplicatie bevat de volgende pagina's:
 - Multer
 - CORS
 
-## Bijdragen
+## 🙋‍♂️🙋‍♀️ Bijdragen
 
 Ik verwelkom alle hulp om het Game Together project te verbeteren! Als je wilt helpen, volg dan deze stappen:
 
@@ -65,6 +67,6 @@ Als je problemen vindt of nieuwe ideeën hebt, open dan een nieuw probleem (issu
 
 Ik kijk uit naar je bijdrage en geven zal je advies geven om het nog beter te maken. Bedankt voor je hulp bij Game Together!
 
-## Licentie
+## 🎫 Licentie
 
 Dit project is gelicenseerd onder de Apache License 2.0. Zie het [LICENSE](LICENSE) bestand voor de volledige licentietekst.
