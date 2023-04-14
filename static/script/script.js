@@ -1,4 +1,5 @@
 // This function is executed when the DOM is loaded
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
 document.addEventListener("DOMContentLoaded", function () {
   // Find all 'game-form' elements and attach a submit event listener
   const gameForms = document.querySelectorAll(".game-form");
@@ -27,7 +28,8 @@ function like(gameId, userId) {
     headers: {
       "Content-Type": "application/json",
     },
-    // Json formats body
+    // Json formats body to string
+    // https://www.w3schools.com/js/js_json_stringify.asp
     body: JSON.stringify({ gameId, userId }),
   })
     .then((response) => {
@@ -49,7 +51,8 @@ function unlike(likeId, userId) {
     headers: {
       "Content-Type": "application/json",
     },
-    // Json formats body
+    // Json formats body to string
+    // https://www.w3schools.com/js/js_json_stringify.asp
     body: JSON.stringify({ likeId, userId }),
   })
     .then((response) => {
